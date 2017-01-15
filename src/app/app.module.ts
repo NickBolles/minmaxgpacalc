@@ -4,23 +4,21 @@ import {NgModule} from "@angular/core";
 import {FormsModule} from "@angular/forms";
 import {HttpModule} from "@angular/http";
 import {MaterialModule} from "@angular/material";
-import {Ng2MaterialModule} from "ng2-material";
+import {MdDataTable} from "ng2-material/components/data-table";
 import {AppComponent} from "./app.component";
 import {GpaTableComponent} from "./gpa-table/gpa-table.component";
-// import { AreaChartComponent } from './area-chart/area-chart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GpaTableComponent,
-    // AreaChartComponent
+    MdDataTable
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    MaterialModule.forRoot(),
-    Ng2MaterialModule.forRoot()
+    MaterialModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
