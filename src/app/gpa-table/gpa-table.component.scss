@@ -1,0 +1,21 @@
+@import "../../theme";
+
+thead.primary-color-fg th {
+  color: md-color($primary) !important;
+}
+
+thead.accent-color-fg th {
+  //color: md-color($accent) !important;
+}
+
+.guarenteed {
+  background-color: md-color($md-green, 500);
+}
+
+.unattainable {
+  background-color: md-color($md-red, 600);
+}
+
+.possible {
+  background-color: md-color($md-amber, 500);
+}

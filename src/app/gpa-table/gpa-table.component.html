@@ -1,0 +1,23 @@
+<md-data-table layout-fill>
+  <thead class="primary-color-fg">
+  <tr>
+    <th>GPA</th>
+    <th>Gradepoints Required</th>
+    <th>Gradepoints Still Needed</th>
+    <th>Gradepoints can Lose</th>
+    <th>Guarenteed?</th>
+    <th>Attainable?</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let threshold of thresholds"
+      [ngClass]="{'guarenteed': threshold.guarenteed, 'unattainable': !threshold.attainable, 'possible': !threshold.guarenteed && threshold.attainable}">
+    <td style="font-weight: 600">{{threshold.gpa }}</td>
+    <td>{{threshold.gradePoints || 'n/a'}}</td>
+    <td>{{threshold.gradePointsNeeded || 'n/a'}}</td>
+    <td>{{threshold.canLoseGradePoints || 'n/a'}}</td>
+    <td style="font-weight: 600">{{threshold.guarenteed ? 'Yes' : 'No'}}</td>
+    <td style="font-weight: 600">{{threshold.attainable ? 'Yes' : 'No'}}</td>
+  </tr>
+  </tbody>
+</md-data-table>

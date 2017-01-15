@@ -1,0 +1,36 @@
+@import '~@angular/material/core/theming/all-theme';
+
+@include md-core();
+
+$primary: md-palette($md-light-blue, 600);
+$accent: md-palette($md-green, 600);
+$warn: md-palette($md-red, 600);
+$theme: md-dark-theme($primary, $accent, $warn);
+@include angular-material-theme($theme);
+
+.primary-color-bg {
+  background-color: md-color($primary);
+  color: md-color($accent, default-contrast)
+}
+
+.primary-color-fg {
+  color: md-color($primary)
+}
+
+.accent-color-bg {
+  background-color: md-color($accent);
+  color: md-color($accent, default-contrast)
+}
+
+.accent-color-fg {
+  color: md-color($accent)
+}
+
+.warn-color-bg {
+  background-color: md-color($warn);
+  color: md-color($accent, default-contrast)
+}
+
+.warn-color-fg {
+  color: md-color($warn)
+}

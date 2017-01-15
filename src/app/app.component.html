@@ -1,0 +1,107 @@
+<md-toolbar color="primary">Min/Max GPA Calculation</md-toolbar>
+<md-card>
+  <md-card-content>
+    <md-card class="nb-stackable">
+      <md-toolbar color="accent" class="nb-toolbar-small">
+        Step 1: Credits
+      </md-toolbar>
+      <md-card-content>
+        <table style="width: 100%" cellspacing="0">
+          <tr>
+            <td colspan="2">
+              <p>Enter the number credits you have completed, and the number of credits you will complete in the
+                future</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+
+              <md-input type="number" [(ngModel)]="curCredits"
+                        placeholder="Current Credits" min="0" step="1"
+                        style="width:100%;">
+                <md-hint>The number of credits you have completed</md-hint>
+              </md-input>
+            </td>
+            <td>
+              <md-input type="number" [(ngModel)]="futCredits"
+                        placeholder="Future Credits" min="0" step="1"
+                        style="width:100%;">
+                <md-hint>The number of credits that you will take in the future</md-hint>
+              </md-input>
+            </td>
+          </tr>
+        </table>
+
+      </md-card-content>
+    </md-card>
+    <md-card>
+      <md-toolbar color="accent" class="nb-toolbar-small">
+        Step 2: Grade
+      </md-toolbar>
+
+      <md-card-content>
+        <table style="width: 100%" cellspacing="0">
+          <tr>
+            <td colspan="2">
+              <p>Enter either your current GPA, or your current Gradepoints</p>
+              <p>Don't worry about the second field, it will be calculated for you as you type</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <md-input type="number" [(ngModel)]="curGPA"
+                        placeholder="Current GPA" min="0" step="0.01"
+                        style="width:100%;">
+                <md-hint>The current GPA that you have earned</md-hint>
+              </md-input>
+            </td>
+            <td>
+              <md-input type="number" [(ngModel)]="curGradepoints"
+                        placeholder="Current Gradepoints" min="0" step="0.01"
+                        style="width:100%;">
+                <md-hint>The number of gradepoints that you have already earned</md-hint>
+              </md-input>
+            </td>
+          </tr>
+        </table>
+      </md-card-content>
+    </md-card>
+    <br/>
+    <br/>
+    <md-card>
+      <md-toolbar color="accent" class="nb-toolbar-small">Results</md-toolbar>
+      <md-card-content>
+        <table style="width:100%;" cellspacing="0" class="nb-results">
+          <tr class="header">
+            <td style="width: 33%;">Min Gradepoints</td>
+            <td style="width: 33%;">To Be Earned Gradepoints</td>
+            <td style="width: 33%;">Max Gradepoints</td>
+          </tr>
+          <tr class="values">
+            <td style="width: 33%;">{{curGradepoints || 'Not Enough Info'}}</td>
+            <td style="width: 33%;">{{maxGradepoints - curGradepoints|| 'Not Enough Info'}}</td>
+            <td style="width: 33%;">{{maxGradepoints || 'Not Enough Info'}}</td>
+          </tr>
+        </table>
+        <table style="width:100%;" cellspacing="0" class="nb-results">
+          <tr class="header">
+            <td style="width: 33%;">Total Credits</td>
+            <td style="width: 33%;">Min GPA</td>
+            <td style="width: 33%;">Max GPA</td>
+          </tr>
+          <tr class="values">
+            <td style="width: 33%;">{{totalCredits || 'Not Enough Info'}}</td>
+            <td style="width: 33%;">{{minGPA || 'Not Enough Info'}}</td>
+            <td style="width: 33%;">{{maxGPA || 'Not Enough Info'}}</td>
+          </tr>
+        </table>
+      </md-card-content>
+
+      <md-card-content>
+        <app-gpa-table [totCredits]="totalCredits" [curCredits]="curCredits"
+                       [curGradepoints]="curGradepoints"></app-gpa-table>
+      </md-card-content>
+    </md-card>
+  </md-card-content>
+</md-card>
+<md-toolbar></md-toolbar>
