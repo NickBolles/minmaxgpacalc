@@ -4,6 +4,12 @@
   height: 2em;
   min-height: 2rem;
   margin-bottom: 1rem;
+
+  .md-toolbar-layout,
+  md-toolbar-row{
+    height: 2em;
+    min-height: 2rem;
+  }
 }
 
 .nb-toolbar-small md-toolbar-row {
@@ -38,6 +44,11 @@ table.nb-results tr.values {
   color: md-color($primary, default-contrast)
 }
 
+.nb-table-container {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
 .flex-column {
   display: flex;
   flex-direction: column;
@@ -51,5 +62,4 @@ table.nb-results tr.values {
 .flex-fill {
   flex: 1 1 auto;
 }
-
 
